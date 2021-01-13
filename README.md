@@ -8,6 +8,10 @@ Here's a picture of someone that could be named Mats. Let's pretend he is.
 ![spad-mats-and-his-dog-loffe](assets/spad-mats.jpg)
 
 # Prerequisites
+`go` installed.
+
+You need `git` installed and on your path (since this program uses exec.Command to run git commands).
+
 You need a [postgres](https://www.postgresql.org/) database installed and running.
 
 Tip: this is what [sider](https://github.com/jonaslu/sider) is made for - quick experiments with no hassle of a full database installation.
@@ -20,3 +24,16 @@ Clone this repository to a local folder.
 Run ./db-setup.sh with the PG_DSN environment set. You can either set the environment variable PG_DSN to a connection string of your choice, or you can accept the default of postgres://postgres@localhost:5432/spad-mats?sslmode=disable.
 
 Postgres must be running when you do this and the script relies on bash and psql.
+
+# cmd/import/main.go
+Imports the commit-log of a local git-repository into two tables in the database.
+If the repository is above a certain commit-count, it uses sampling to lower the number of commits.
+
+It uses two environment-variables: PG_DSN for the connection string (or you can use the default) and COUNT which is the number above it starts to sample commits. If not set will sample the entire repo.
+
+Usage:
+`go run cmd/import/main.go <path-to-repo> <repo-name>`
+
+It'll consider the currently checked out branch of the given repo (if bare cloned will default to master or main if newer github repository).
+
+It is assumed that the git-repo exists on the correct path and that it contains at least 1 commit. What happens otherwise is undefined.
