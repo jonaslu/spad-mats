@@ -17,6 +17,8 @@ Tip: this is what [sider](https://github.com/jonaslu/sider) is made for - quick 
 
 In addition you need the psql command-line. It's available as a standalone package in most distros so you don't need the full postgres-installation (e g [postgres-libs](https://archlinux.org/packages/extra/x86_64/postgresql-libs/) in arch linux).
 
+If you want to import the 100 most popular repos via [clone-repos.sh](clone-repos.sh) and run the stats in [RESULT.md](RESULT.md) then you also need [pup](https://github.com/ericchiang/pup) installed. Your package manager should have it.
+
 # Installation
 Clone this repository to a local folder.
 
@@ -36,3 +38,14 @@ Usage:
 It'll consider the currently checked out branch of the given repo (if bare cloned will default to master or main if newer github repository).
 
 It is assumed that the git-repo exists on the correct path and that it contains at least 1 commit. What happens otherwise is undefined.
+
+# clone-repos.sh
+Script that pulls the 100 most popular repos from github and then imports them into the
+postgres database with the command above. Samples repositories down to a 1000 commits.
+
+It uses your /tmp/ folder to clone repos into and then deletes them. Since some repos are quite
+large (such as linux, go and nodejs) it takes one positional parameter which is a folder to clone into
+should your /tmp/ partition be too small.
+
+This script requires you to have git and pup installed and on your path.
+
