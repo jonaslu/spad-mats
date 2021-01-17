@@ -8,11 +8,10 @@ Here's a picture of someone that could be named Mats. Let's pretend he is.
 ![spad-mats-and-his-dog-loffe](assets/spad-mats.jpg)
 
 # Prerequisites
-`go` installed.
-
-You need `git` installed and on your path (since this program uses exec.Command to run git commands).
-
-You need a [postgres](https://www.postgresql.org/) database installed and running.
+You need:
+* [Go](https://golang.org/) installed and on your path.
+* [Git](https://git-scm.com/) installed and on your path (since this program uses exec.Command to run git commands).
+* [Postgres](https://www.postgresql.org/) database installed and running.
 
 Tip: this is what [sider](https://github.com/jonaslu/sider) is made for - quick experiments with no hassle of a full database installation.
 
