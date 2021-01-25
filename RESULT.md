@@ -1,7 +1,7 @@
 # Setup
 This is the sister-repo to a blog-post discussing commit atomicity and literacy.
 Reading that post first will make much more sense of the rest in this file.
-[link](link).
+[https://www.iamjonas.me/2021/01/literate-atomic-commits.html](https://www.iamjonas.me/2021/01/literate-atomic-commits.html)
 
 See the [README.md](README.md) for what the programs do.
 
