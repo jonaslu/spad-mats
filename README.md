@@ -50,4 +50,4 @@ should your /tmp/ partition be too small.
 This script requires you to have git and pup installed and on your path.
 
 # RESULT.md
-A discussion relating to my blog-post: [link](link) on which I use the ./clone-repos.sh result in postgres to check the atomicity and literacy of the 100 most popular repos on github.
+A discussion relating to my blog-post: [https://www.iamjonas.me/2021/01/literate-atomic-commits.html](https://www.iamjonas.me/2021/01/literate-atomic-commits.html) in which I use the ./clone-repos.sh result in postgres to check the atomicity and literacy of the 100 most popular repos on github.
